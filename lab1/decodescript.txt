@@ -1,0 +1,27 @@
+#*************************
+# Author: Greg Lee
+# Date: 1/10/18
+# Description: A bash script that decodes a file, removes the header and footer, and then returns the md5 and sha1 hash of the file. 
+#************************
+
+#!/bin/bash
+# variable declaration 
+TEMPFILE=$(mktemp)
+
+# decode file and place into temp file 
+base64 -D file1.txt > TEMPFILE
+
+#search for the line that contains the below string and save their numbers into HEAD and FOOT respectively
+HEAD=$(grep -n "\*\*\* START OF THIS PROJECT" TEMPFILE | cut -d ":" -f1)
+FOOT=$(grep -n "\*\*\* END OF THIS PROJECT" TEMPFILE | cut -d ":" -f1)
+
+#removes the contents of the file between HEAD and FOOT and then moves the result into OUTPUT  
+sed "$HEAD,$FOOT!d" TEMPFILE > decodedfile1.txt
+md5 decodedfile1.txt
+shasum decodedfile1.txt
+
+#remove temp file and clear variables
+rm TEMPFILE
+HEAD=
+FOOT=
+

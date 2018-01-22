@@ -1,0 +1,66 @@
+All images in this directory and subdirectory
+./images/12hourramen.PNG: PNG image
+./images/burger.PNG: PNG image
+./images/DOGE.jpg: JPEG image
+./images/hokkaiyaki.PNG: PNG image
+./images/IMG_0292.jpg: JPEG image
+./images/IMG_1837.CR2: TIFF image
+./images/IMG_1839.CR2: TIFF image
+./images/IMG_1845.CR2: TIFF image
+./images/IMG_2693.JPG: JPEG image
+./images/IMG_2694.JPG: JPEG image
+./images/IMG_2695.JPG: JPEG image
+./images/IMG_3420.JPG: JPEG image
+./images/IMG_4216.JPG: JPEG image
+./images/IMG_4794.JPG: JPEG image
+./images/lobstah_rolls.PNG: PNG image
+./images/sakura_sushi.PNG: PNG image
+./images/SANTOUKA.PNG: PNG image
+./images/seafood_ramen.PNG: PNG image
+./images/shakey_shack.PNG: PNG image
+./images/TOTTO.PNG: PNG image
+=======================================================
+Owners of each image that is in this directory and subdirectory
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+leeg3
+=======================================================
+Full path of each image in this directory and subdirectory
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+/Users/leeg3/Documents/UNI/SEMESTER7/Scripting_for_CyberSec/lab2
+=======================================================
