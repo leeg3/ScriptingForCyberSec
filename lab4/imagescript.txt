@@ -1,0 +1,115 @@
+#!/bin/bash
+#***********************************
+# Author: Greg Lee
+# Date: 1/16/17
+# Description: Search all images/directory for images and return the image type, owner, full path of image, and hash
+# Note: Files were placed in a current directory and sub directory 
+#***********************************
+
+#init arrays 
+declare -a IMAGELIST
+declare -a TYPELIST
+declare -a OWNERLIST
+declare -a PATHLIST
+declare -a MD5LIST
+declare -a SHA1LIST
+
+#get number of images in this dir and subdir
+find . -type f -exec file {} \; | grep -i -o -E '^.+: \w+ image' > TEMP
+result=( $(wc < TEMP) ) 
+
+#get all image filenames and place them into the IMAGELIST array 
+find . -type f -exec file {} \; | grep -i -o -E '^.+: \w+ image' | cut -d ':' -f1 | while read line; do basename $line; done > IMG
+NUM=0
+while read line; do 
+	if [ "$NUM" -le "$result" ]; then 
+		IMAGELIST[$NUM]=$line 
+		NUM=$((NUM + 1))
+	fi
+done < IMG
+ 
+
+#get all image file types and place them into the TYPELIST array 
+find . -type f -exec file {} \; | grep -i -o -E '^.+: \w+ image' | cut -d ':' -f2 > TYPE
+NUM=0
+while read line; do
+	if [ "$NUM" -le "$result" ]; then
+		TYPELIST[$NUM]=$line
+		NUM=$((NUM + 1))
+	fi
+done < TYPE
+
+
+#get all owners of each file and place them into the OWNERLIST array
+find . -type f -exec file {} \; | grep -i -o -E '^.+: \w+ image' | cut -d ':' -f1 | while read -r line; do stat -f %Su $line; done > OWNER
+NUM=0
+while read line; do
+        if [ "$NUM" -le "$result" ]; then
+                OWNERLIST[$NUM]=$line
+                NUM=$((NUM + 1))
+        fi      
+done < OWNER
+ 
+
+#get the full path of the file and place them into the PATHLIST array 
+find . -type f -exec file {} \; | grep -i -o -E '^.+: \w+ image' | cut -d ':' -f1 | while read line; do basename $line; done | while read line; do find $PWD -name $line; done > PATH
+NUM=0
+while read line; do
+        if [ "$NUM" -le "$result" ]; then
+                PATHLIST[$NUM]=$line
+                NUM=$((NUM + 1))
+        fi      
+done < PATH
+
+
+#get md5 hash of each file and place them into the MD5LIST array 
+NUM=0
+while read line; do
+        if [ "$NUM" -le "$result" ]; then
+                TEMP="$(md5 $line | cut -d \= -f2)"
+		MD5LIST[$NUM]=$TEMP
+                NUM=$((NUM + 1))
+        fi      
+done < PATH
+
+
+#get SHA1 hash of each file and place them into the SHA1LIST array 
+NUM=0
+while read line; do
+        if [ "$NUM" -le "$result" ]; then
+                TEMP="$(shasum $line | cut -d \/ -f 1)"
+                SHA1LIST[$NUM]=$TEMP
+                NUM=$((NUM + 1))
+        fi     
+done < PATH
+
+#put data that was placed into the arrays into the output file 
+echo "OUTPUT FILE" > output.txt
+echo "The results of the script are output into the format below." >> output.txt
+echo "Image Name, Image Type, Owner, Full Path, MD5 Hash, SHA1 Hash" >> output.txt
+NUM=0
+while [ "$NUM" -lt "$result" ]; do
+	echo ${IMAGELIST[$NUM]} "," ${TYPELIST[$NUM]} "," ${OWNERLIST[$NUM]} "," ${MD5LIST[$NUM]}>> output.txt
+	NUM=$((NUM + 1))
+done
+
+#display output file in terminal 
+cat output.txt 
+
+# command check
+if [ $? -eq 1 ]; then 
+	echo "Error in script."
+	exit 1
+else
+	echo "Script ended successfully"
+fi
+
+#clean up 
+rm OWNER
+rm PATH
+rm TEMP
+rm TYPE
+rm IMG
+result=
+NUM=
+

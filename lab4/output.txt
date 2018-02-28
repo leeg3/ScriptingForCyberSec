@@ -1,0 +1,15 @@
+OUTPUT FILE
+The results of the script are output into the format below.
+Image Name, Image Type, Owner, Full Path, MD5 Hash, SHA1 Hash
+01_NUP_177028_0043.jpeg , JPEG image , leeg3 , 997c5a911c53347c839f318a79e09043
+20210305_155203.jpg , JPEG image , leeg3 , 9706d464715d003d77b6256f2ecc2225
+20210528_155753.jpg , JPEG image , leeg3 , cbde015c73edd5b8647d43c165864d98
+20210622_123139.jpg , JPEG image , leeg3 , 8de9afebc3a02b3275dcabd739f6a88f
+20210808_135118.jpg , JPEG image , leeg3 , 7cbc143baa1668ffaa93fbeef7725b92
+20210926_151243.jpg , JPEG image , leeg3 , 7f2c52e190719e894a78f802ee1ecc45
+20211106_121304.jpg , JPEG image , leeg3 , 2fca8b6ac533c6e94540340f4b181d2a
+24130127_1380577528736767_4694714007175234011_o.jpg , JPEG image , leeg3 , 44439556174cdc860c31144b2fa2f62e
+DembeS3.jpg , JPEG image , leeg3 , 62dbe7ea66c50830c628cd54796502ea
+image1_copy.jpeg , JPEG image , leeg3 , 63f7f015796ac127ae29e5ab29eaddba
+jumanji-welcome-to-the-jungle-cast-5k-0-2048x1152.jpg , JPEG image , leeg3 , 709d3debbdf7eb9f66ad926ed5d67e38
+landscape-rexfeatures-1691279b-1.jpg , JPEG image , leeg3 , 8163f914702e7070f10796113970d20c
